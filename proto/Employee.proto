@@ -1,0 +1,18 @@
+syntax = "proto3";
+package employee.v1;
+option go_package = "./generated;employeev1";
+
+service Employee {
+  rpc getEmployee (EmployeeRequest) returns (EmployeeResponse) {}
+}
+
+message EmployeeRequest {
+  int32 id=1;
+}
+
+message EmployeeResponse {
+  int32 id=1;
+  string name=2;
+  int32 age=3;
+  double salary=4;
+}
